@@ -8,16 +8,20 @@ Copyright (c) 2011, Ken Graham
 '''
 
 # hyperpublic_challenge1.py
-
 # running on Python 2.7.1
 
-input = open('hyperpublic-challenge2input.txt','r')
+import fileinput
+
+filename = 'hyperpublic-challenge2input.txt'
+#input = open('hyperpublic-challenge2input.txt','r')
+
 
 # the i_th line of the file tells you which users the i_th user brought in
 users = {}
 num_users_added = {}
 i=0
-for row in input:
+#for row in input:
+for row in fileinput.input([filename]):
   # user[i] tells you which users were added by user i
   users[i] = list(row)
   # users_added_by[i] tells who how many users were added by user i
